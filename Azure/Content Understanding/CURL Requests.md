@@ -67,7 +67,7 @@ curl --location 'https://cu-resource-nate.services.ai.azure.com/contentunderstan
 --header 'Ocp-Apim-Subscription-Key: #{{CU_RESOURCE_KEY}}'
 ```
 #### Response:
-```
+```json
 {
     "id": "b5bafee8-95f7-49b8-bd5b-5bd5c8e29000",
     "status": "Succeeded",
@@ -2864,7 +2864,7 @@ curl --location 'https://cu-resource-nate.services.ai.azure.com/contentunderstan
 ```
 
 #### Response: the analyzer properties (including the field schema)
-```
+```json
 {
     "analyzerId": "loadDocumentAnalyzer",
     "description": "Load Document Analyzer",
@@ -3040,7 +3040,9 @@ curl --location 'https://cu-resource-nate.services.ai.azure.com/contentunderstan
 ### PUT - Insert new Analyzer
 
 * **Request**:
- ```json
+
+Test spot 
+```json
 {
   "description": "This is a test",
   "models": {
@@ -3065,8 +3067,7 @@ curl --location 'https://cu-resource-nate.services.ai.azure.com/contentunderstan
     }
   ]
 }
-			   ```
-
+```
 * **Response:**
 ```json
 {
@@ -3112,6 +3113,7 @@ curl --location 'https://cu-resource-nate.services.ai.azure.com/contentunderstan
     }
 }
 ```
+
 - This indicates a new analyzer has been set up. 
 - When PUTing, an existing analyzer cannot be used.
 - This response gives me a lot of insight as to what makes up an analyzer.

@@ -1,0 +1,13 @@
+# Obsidian internals
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Optional: ignore all plugins except settings
+.obsidian/plugins/*
+!.obsidian/plugins/.gitkeep

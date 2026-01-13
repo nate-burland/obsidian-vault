@@ -1,0 +1,1 @@
+https://contentunderstanding.ai.azure.com/documentintelligence/studio/document-classifier/projects/b5465cc4-e185-45dc-97a5-af4b55186ed0/label?tenantid=ea2f6c72-03df-4f1b-ae34-0ba958d2e1a4&projectresourceid=%2Fsubscriptions%2F99818f90-1a5e-4c3f-ab80-b1017ff5bae8%2FresourceGroups%2FDocumentAI-RG%2Fproviders%2FMicrosoft.CognitiveServices%2Faccounts%2Fnburland-document-recognizer

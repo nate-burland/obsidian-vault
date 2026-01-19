@@ -29,3 +29,95 @@ This is the key right here. The way the data is stored in the workflow project i
 	- AnalysisProfile
 	- WorkflowId
 
+
+### AnalysisProfile:
+```
+{
+    AnalysisProfileId
+    Name
+    AnalyzerType // Analyzer | Categorizer
+    BaseAnalyzerId?
+    Models
+    Fields?        // Only if Analyzer
+    Config
+    ConfidenceRules?
+    Version
+}
+```
+
+### WorkflowDefinition:
+```
+{
+    WorkflowDefinitionId
+    Name
+    Phases: [
+        Ingest,
+        Analyze,
+        Validate,
+        Transform,
+        Export,
+        PostProcess
+    ]
+}
+```
+Each phase contains a reference to a WorkflowPhase
+#### WorkflowPhase:
+```
+{
+    PhaseType
+    Tasks: [
+        {
+            TaskType,        // e.g. UploadToBlob, SendToQuickBooks
+            TaskProfileId,   // config reference
+            IsRequired,
+            RetryPolicy
+        }
+    ]
+}
+```
+
+#### TaskProfile:
+```
+{
+    TaskProfileId
+    TaskType
+    Config
+    CostCategory?   // billing hook
+}
+```
+This defines _how_ the task is executed. 
+
+A workflow contains a list of phases. Each phase defines a task to complete. Each task is saved with a unique ID. This allows tasks to be reused across workflows. 
+
+### FieldMappingProfile:
+```
+{
+    FieldMappingProfileId
+    SourceSchemaVersion
+    TargetSchema
+    Mappings: [
+        {
+            SourceField,
+            TargetField,
+            Transform?
+        }
+    ]
+}
+```
+
+### DocumentProcessingProfile:
+```
+{
+    DocumentProcessingProfileId
+    Name
+
+    AnalysisProfileId
+    WorkflowDefinitionId
+    FieldMappingProfileId?
+
+    ValidationRules
+    RetentionPolicy
+    Version
+}
+```
+This is the big boy. Basically an user will be able to assign a DocumentProcessProfile to a set of documents and all of those documents will be processed using that profile. 

@@ -1,0 +1,1 @@
+If an extraction succeeds but doesn't match the desired confidence/field requirement, the data can be saved for manual review. These could be flagged for future manual review.
